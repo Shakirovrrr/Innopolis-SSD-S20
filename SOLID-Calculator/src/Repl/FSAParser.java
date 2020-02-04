@@ -5,13 +5,11 @@ import java.util.List;
 
 public class FSAParser implements ExpressionParser {
 	private String input;
-	private int inputPos;
 	private double aVal, bVal;
 	private char operator;
 
 	@Override
 	public void setInput(String input) {
-		this.inputPos = 0;
 		this.input = input;
 	}
 
@@ -87,10 +85,6 @@ public class FSAParser implements ExpressionParser {
 			tokens.add(buffer.toString());
 			buffer.setLength(0);
 		}
-	}
-
-	private byte nextByte() {
-		return input.getBytes()[inputPos++];
 	}
 
 	@Override

@@ -7,10 +7,10 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class UserRepl {
-	private CalculatorCore calcCore;
-	private ExpressionParser parser;
-	private InputStream inputStream;
-	private PrintStream printStream;
+	private final CalculatorCore calcCore;
+	private final ExpressionParser parser;
+	private final InputStream inputStream;
+	private final PrintStream printStream;
 
 
 	public UserRepl(CalculatorCore calcCore, ExpressionParser parser) {
@@ -30,13 +30,12 @@ public class UserRepl {
 		boolean parsingSucceeded;
 		char operator;
 		double a, b;
-		boolean running = true;
-		while (running) {
+		while (true) {
 			input = scanner.nextLine();
 
 			if (input.toLowerCase().equals("exit")) {
 				printStream.println("Exit.");
-				running = false;
+				break;
 			}
 
 			parser.setInput(input);
@@ -61,6 +60,10 @@ public class UserRepl {
 					printStream.println(calcCore.multiply(a, b));
 					break;
 				case '/':
+					if (Double.compare(b, 0) == 0) {
+						printStream.println("Division by zero is not allowed.");
+						break;
+					}
 					printStream.println(calcCore.divide(a, b));
 					break;
 			}
