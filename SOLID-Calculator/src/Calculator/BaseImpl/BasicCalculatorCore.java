@@ -1,5 +1,10 @@
+package Calculator.BaseImpl;
+
+import Calculator.CalculatorCore;
+import Calculator.Operation;
+
 public class BasicCalculatorCore implements CalculatorCore {
-	private Operation summator, subtractor, multiplier, divisor;
+	private final Operation summator, subtractor, multiplier, divisor;
 
 	public BasicCalculatorCore(Operation summator, Operation subtractor, Operation multiplier, Operation divisor) {
 		this.summator = summator;

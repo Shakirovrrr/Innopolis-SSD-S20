@@ -1,3 +1,5 @@
+package Calculator;
+
 public interface CalculatorCore {
 	double add(double a, double b);
 
