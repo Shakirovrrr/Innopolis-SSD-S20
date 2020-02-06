@@ -1,10 +1,11 @@
+import Repl.ExpressionParser;
 import Repl.FSAParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class TestParser {
-	private static FSAParser parser;
+	private static ExpressionParser parser;
 
 	@BeforeAll
 	static void initialize() {
