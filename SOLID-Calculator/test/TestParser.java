@@ -1,5 +1,5 @@
-import Repl.ExpressionParser;
-import Repl.FSAParser;
+import Parser.BaseImpl.FSAParser;
+import Parser.ExpressionParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

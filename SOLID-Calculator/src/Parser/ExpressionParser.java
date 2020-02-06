@@ -1,4 +1,4 @@
-package Repl;
+package Parser;
 
 public interface ExpressionParser {
 	void setInput(String input);

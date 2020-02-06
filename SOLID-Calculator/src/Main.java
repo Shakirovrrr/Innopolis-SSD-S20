@@ -1,8 +1,7 @@
 import Calculator.BaseImpl.*;
 import Calculator.CalculatorCore;
-import Repl.ExpressionParser;
-import Repl.FSAParser;
-import Repl.UserRepl;
+import Parser.BaseImpl.FSAParser;
+import Parser.ExpressionParser;
 
 public class Main {
 	public static void main(String[] args) {
