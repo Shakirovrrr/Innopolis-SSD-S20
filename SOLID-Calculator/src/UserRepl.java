@@ -32,7 +32,6 @@ public class UserRepl {
 		boolean parsingSucceeded;
 		char operator;
 		double a, b;
-		StringBuilder stringBuilder = new StringBuilder();
 		double result;
 
 		printStream.println("hist - show history.\nexit - exit.\n+, -, *, / are allowed.\n");
@@ -94,9 +93,7 @@ public class UserRepl {
 
 			printStream.println(result);
 
-			stringBuilder.append(a).append(' ').append(operator).append(' ').append(b).append(" = ").append(result);
-			history.add(stringBuilder.toString());
-			stringBuilder.setLength(0);
+			history.add(a + " " + operator + " " + b + " = " + result);
 			if (history.size() > 5) {
 				history.poll();
 			}
