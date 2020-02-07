@@ -62,6 +62,10 @@ public class FSAParser implements ExpressionParser {
 		}
 		flushTokenBuf(buffer, tokens);
 
+		if (tokens.size() == 0) {
+			return false;
+		}
+
 		if (tokens.size() != 3) {
 			if (!(tokens.get(0).equals("-") && tokens.size() == 4)) {
 				return false;
