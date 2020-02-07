@@ -5,16 +5,25 @@ import Parser.ExpressionParser;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * FSA-based expressions parser implementation.
+ */
 public class FSAParser implements ExpressionParser {
 	private String input;
 	private double aVal, bVal;
 	private char operator;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void setInput(String input) {
 		this.input = input;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean parse() {
 		byte state = 0, prevState = 0;
@@ -86,6 +95,9 @@ public class FSAParser implements ExpressionParser {
 		return true;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	private void flushTokenBuf(StringBuilder buffer, List<String> tokens) {
 		if (buffer.length() > 0) {
 			tokens.add(buffer.toString());
@@ -93,16 +105,25 @@ public class FSAParser implements ExpressionParser {
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public double getA() {
 		return aVal;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public double getB() {
 		return bVal;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public char getOperator() {
 		return operator;

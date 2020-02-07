@@ -7,6 +7,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+/**
+ * User REPL interactive interface.
+ */
 public class UserRepl {
 	private final CalculatorCore calcCore;
 	private final ExpressionParser parser;
@@ -14,10 +17,28 @@ public class UserRepl {
 	private final PrintStream printStream;
 	private final Queue<String> history;
 
+	/**
+	 * Create new user REPL with specified calculator core and expression parser.
+	 * <p>
+	 * Works with standard input and standard output.
+	 *
+	 * @param calcCore Calculator core.
+	 * @param parser   Expression parser.
+	 */
 	public UserRepl(CalculatorCore calcCore, ExpressionParser parser) {
 		this(calcCore, parser, System.in, System.out);
 	}
 
+	/**
+	 * Create new user REPL with specified
+	 * calculator core, expression parser,
+	 * input and output streams.
+	 *
+	 * @param calcCore    Calculator core.
+	 * @param parser      Expression parser.
+	 * @param inputStream Input stream.
+	 * @param printStream Output print stream.
+	 */
 	public UserRepl(CalculatorCore calcCore, ExpressionParser parser, InputStream inputStream, PrintStream printStream) {
 		this.calcCore = calcCore;
 		this.parser = parser;
@@ -26,6 +47,9 @@ public class UserRepl {
 		this.history = new LinkedList<>();
 	}
 
+	/**
+	 * Start the REPL.
+	 */
 	public void run() {
 		String input;
 		Scanner scanner = new Scanner(inputStream);
