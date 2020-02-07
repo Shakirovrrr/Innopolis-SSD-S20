@@ -1,12 +1,12 @@
 package Calculator.BaseImpl;
 
+import Calculator.BinaryOperation;
 import Calculator.CalculatorCore;
-import Calculator.Operation;
 
 public class BasicCalculatorCore implements CalculatorCore {
-	private final Operation summator, subtractor, multiplier, divisor;
+	private final BinaryOperation summator, subtractor, multiplier, divisor;
 
-	public BasicCalculatorCore(Operation summator, Operation subtractor, Operation multiplier, Operation divisor) {
+	public BasicCalculatorCore(BinaryOperation summator, BinaryOperation subtractor, BinaryOperation multiplier, BinaryOperation divisor) {
 		this.summator = summator;
 		this.subtractor = subtractor;
 		this.multiplier = multiplier;

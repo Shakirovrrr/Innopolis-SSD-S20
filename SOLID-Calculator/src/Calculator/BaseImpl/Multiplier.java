@@ -1,8 +1,8 @@
 package Calculator.BaseImpl;
 
-import Calculator.Operation;
+import Calculator.BinaryOperation;
 
-public class Multiplier implements Operation {
+public class Multiplier implements BinaryOperation {
 	@Override
 	public double apply(double a, double b) {
 		return a * b;
