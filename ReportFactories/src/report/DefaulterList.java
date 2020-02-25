@@ -9,11 +9,19 @@ public class DefaulterList implements Report {
 		this.studentName = studentName;
 	}
 
+	/**
+	 * Print the created report.
+	 */
 	@Override
 	public void print() {
 
 	}
 
+	/**
+	 * Add subject with debt.
+	 *
+	 * @param subject Subject
+	 */
 	public void addRecord(String subject) {
 
 	}
